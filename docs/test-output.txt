@@ -1,27 +1,27 @@
 
-> dsh-plugin-latex@0.1.3 test
+> dsh-plugin-latex@0.1.4 test
 > node --test test/*.test.js
 
-✔ projects persist and duplicate imports reuse identity (10.00075ms)
-✔ file writes preserve external edits using compare-and-swap (5.697041ms)
-✔ inline creation rejects duplicate, traversal and symlink escape (6.577833ms)
-✔ review metadata and chat membership persist (4.685875ms)
-✔ semantic annotations reuse unchanged paragraphs and locate sections (2.821583ms)
-✔ compiler creates real PDF and retains last successful result after error (2007.39525ms)
-✔ subprocess cancellation, timeout and missing executable (57.768208ms)
-✔ semantic splitting preserves abbreviations, inline math and comments (0.582542ms)
-✔ analysis requires complete model data and does not invent semantics (0.151875ms)
-✔ nested main file compiles with root-relative input (531.800125ms)
-✔ multi-file traversal inherits section context and rejects cycles (8.444ms)
-✔ merged maps retain file locations and group common sections (0.327583ms)
-✔ annotation preserves compiled prose and paragraph boundaries (2140.232083ms)
-✔ paper instructions are independent and preserve imported custom rules (7.763208ms)
-✔ Host routes report errors and fence conversation roots (35.447792ms)
-✔ review material expands only for bound sessions (5.916834ms)
-✔ public project responses keep semantic snapshots internal (4.005125ms)
-✔ multi-file analysis annotates source files and reuses all unchanged paragraphs (34.841375ms)
-✔ paper system guidance is restricted to bound project sessions (4.297625ms)
-✔ opening an existing paper creates its editable workspace instructions (4.078083ms)
+✔ projects persist and duplicate imports reuse identity (12.651542ms)
+✔ file writes preserve external edits using compare-and-swap (5.627917ms)
+✔ inline creation rejects duplicate, traversal and symlink escape (4.492625ms)
+✔ review metadata and chat membership persist (3.659833ms)
+✔ semantic annotations reuse unchanged paragraphs and locate sections (3.084709ms)
+✔ compiler creates real PDF and retains last successful result after error (1646.371209ms)
+✔ subprocess cancellation, timeout and missing executable (56.343208ms)
+✔ semantic splitting preserves abbreviations, inline math and comments (0.590333ms)
+✔ analysis requires complete model data and does not invent semantics (0.136833ms)
+✔ nested main file compiles with root-relative input (603.823667ms)
+✔ multi-file traversal inherits section context and rejects cycles (9.861458ms)
+✔ merged maps retain file locations and group common sections (0.262083ms)
+✔ annotation preserves compiled prose and paragraph boundaries (2388.038375ms)
+✔ Host routes report errors and fence conversation roots (38.560875ms)
+✔ review material expands only for bound sessions (6.928792ms)
+✔ public project responses keep semantic snapshots internal (4.245958ms)
+✔ multi-file analysis annotates source files and reuses all unchanged paragraphs (34.150625ms)
+✔ paper system guidance is restricted to bound project sessions (4.415708ms)
+✔ paper instructions stay outside project files (3.13325ms)
+✔ internal instructions persist and archive only matching project templates (20.55025ms)
 ℹ tests 20
 ℹ suites 0
 ℹ pass 20
@@ -29,4 +29,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 4865.927791
+ℹ duration_ms 4862.588292

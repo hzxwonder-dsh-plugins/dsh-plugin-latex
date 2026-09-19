@@ -1,6 +1,6 @@
 # DSH LaTeX Studio 验收报告
 
-日期：2026-09-19。版本：0.1.3。环境：macOS、DSH Desktop 2.0.10、DeepSeek Harness 0.1.5-rc.2、Node.js 24.11.1、本地 MacTeX。
+日期：2026-09-19。版本：0.1.4。环境：macOS、DSH Desktop 2.0.10、DeepSeek Harness 0.1.5-rc.2、Node.js 24.11.1、本地 MacTeX。
 
 ## 结论
 
@@ -8,19 +8,21 @@
 
 测试数据为合成的 Research Demo、Methods Note 和临时目录论文。模型调用采用 Desktop 当前配置的真实 deepseek-flash 路由；自动测试中的固定语义响应只用于验证协议与缓存，不作为模型质量证据。
 
-## 论文工作区指令与导航
+## 工作台内部指令与导航
 
 | 编号 | 验收结果 |
 |---|---|
-| I01 | 自动测试通过：新建项目生成默认 AGENTS.md，两篇论文的规则互相独立 |
-| I02 | 自动测试通过：导入已有规则保持原文，旧项目打开时补齐缺失文件 |
-| I03 | 自动测试通过：符号链接拒绝写入，自定义文件重复打开后保持原文 |
-| I04 | Desktop 实测：Research Demo 文件栏出现 AGENTS.md，点击后编辑器显示写作、审阅及 Overleaf 规则；保存逻辑复用通过回归测试的文件编辑接口 |
+| I01 | 自动测试通过：内部目录初始化专属 AGENTS.md，已有规则保留 |
+| I02 | 自动测试通过：新建和打开论文不创建项目级指令文件 |
+| I03 | 自动测试通过：匹配模板移至内部备份，自定义项目规则保留；内部符号链接拒绝加载 |
+| I04 | 自动测试通过：系统提示词仅向论文绑定且目录匹配的会话注入内部规则 |
 | I05 | Desktop 截图复核：入口采用 16px 线框图标，字体、字重和内边距与工作流一致 |
 
-论文会话系统提示词引导 Agent 每轮读取本项目 AGENTS.md。原生工作区指令加载实现已复核，本轮未另发模型请求验证遵循效果；Overleaf 真实远端推送仍未测试。
+Desktop 实测：重新打开 Research Demo 后文件栏显示 main.tex、notes.tex；内部规则已加载，项目中自动生成的默认模板已归档到内部备份。
 
-![论文工作区指令](../assets/paper-instructions.png)
+![论文文件栏](../assets/workspace-files.png)
+
+内部指令在插件启动时加载，论文文件栏不展示。模型按规则执行的遵循效果和 Overleaf 真实远端推送尚未独立验收。
 
 ## 工作台导航与论文会话验收
 
@@ -37,7 +39,7 @@
 | N07 | Agent 向真实 Overleaf 远端提交并推送 | 未执行；未提供测试 Overleaf 远端及凭据 |
 | N08 | 导图单击 Abstract，随后双击 Abstract | 通过；单击选中，双击定位 abstract 原文 |
 
-论文规则保存在项目 AGENTS.md；Harness 的动态 systemPrompt variable/section 引导 Agent 每轮读取并执行。编辑器手动保存、编译和语义导图注释写入本身不触发 Git 提交。已有历史消息的提示词记录对应当时运行，新增规则用于后续 Agent 调用。
+论文规则保存在工作台内部 AGENTS.md；Harness 的动态 systemPrompt variable/section 为论文会话注入指令。编辑器手动保存、编译和语义导图注释写入本身不触发 Git 提交。已有历史消息的提示词记录对应当时运行，新增规则用于后续 Agent 调用。
 
 ![主导航入口](../assets/navigation.png)
 
