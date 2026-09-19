@@ -1,12 +1,29 @@
 # DSH LaTeX Studio 验收报告
 
-日期：2026-09-19。版本：0.1.6。环境：macOS、DSH Desktop 2.0.10、DeepSeek Harness 0.1.5-rc.2、Node.js 24.11.1、本地 MacTeX。
+日期：2026-09-19。版本：0.1.7。环境：macOS、DSH Desktop 2.0.10、DeepSeek Harness 0.1.5-rc.2、Node.js 24.11.1、本地 MacTeX。
 
 ## 结论
 
-本地论文编辑、真实编译与 PDF 预览、审阅选择、原生模型会话、Agent 文件修改、四级行文导图及增量更新的主要流程已在实际 Desktop 界面运行。22 项自动测试全部通过，构建和发布内容扫描通过。此结果对应上述固定环境，完整跨平台兼容性和极端故障恢复尚未验收。
+本地论文编辑、真实编译与 PDF 预览、审阅选择、原生模型会话、Agent 文件修改、四级行文导图及增量更新的主要流程已在实际 Desktop 界面运行。23 项自动测试全部通过，构建和发布内容扫描通过。此结果对应上述固定环境，完整跨平台兼容性和极端故障恢复尚未验收。
 
 测试数据为合成的 Research Demo、Methods Note 和临时目录论文。模型调用采用 Desktop 当前配置的真实 deepseek-flash 路由；自动测试中的固定语义响应只用于验证协议与缓存，不作为模型质量证据。
+
+## 全局与论文设置
+
+| 测试项 | 结果 |
+|---|---|
+| 初始页全局设置入口 | Desktop 实际点击通过 |
+| 浅色、深色全局设置 | 实际切换与截图复核通过；恢复用户原有深色主题 |
+| 内部 AGENTS.md 保存 | Desktop 保存提示通过；自动测试验证持久化、后续提示词更新、旧版本冲突拒绝、大小限制及项目目录隔离 |
+| 左下角论文设置齿轮 | Desktop 点击打开编译设置，通过 |
+| 编译器与编译主文件 | 实际切换至 xelatex / notes.tex，检查持久化配置通过；随后恢复 pdflatex / main.tex |
+| Escape 关闭设置 | Desktop 实测通过 |
+| 文件标签与保存状态间距 | Desktop 源码页面截图复核通过 |
+
+![全局设置深色](../assets/global-settings-dark.png)
+![全局设置浅色](../assets/global-settings-light.png)
+![论文编译设置](../assets/paper-settings.png)
+![工具栏与设置入口](../assets/settings-toolbar.png)
 
 ## 行文导图 Skill
 
@@ -43,7 +60,7 @@ Desktop 实测：重新打开 Research Demo 后文件栏显示 main.tex、notes.
 
 ![论文文件栏](../assets/workspace-files.png)
 
-内部指令在插件启动时加载，论文文件栏不展示。模型按规则执行的遵循效果和 Overleaf 真实远端推送尚未独立验收。
+内部指令在插件启动时加载，也可从全局设置保存并即时更新后续调用，论文文件栏不展示。模型按规则执行的遵循效果和 Overleaf 真实远端推送尚未独立验收。
 
 ## 工作台导航与论文会话验收
 
