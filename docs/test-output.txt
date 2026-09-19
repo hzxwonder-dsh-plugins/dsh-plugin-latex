@@ -1,0 +1,29 @@
+
+> dsh-plugin-latex@0.1.0 test
+> node --test test/*.test.js
+
+✔ projects persist and duplicate imports reuse identity (6.427792ms)
+✔ file writes preserve external edits using compare-and-swap (3.483167ms)
+✔ inline creation rejects duplicate, traversal and symlink escape (3.398625ms)
+✔ review metadata and chat membership persist (3.118875ms)
+✔ semantic annotations reuse unchanged paragraphs and locate sections (2.089917ms)
+✔ compiler creates real PDF and retains last successful result after error (1074.420291ms)
+✔ subprocess cancellation, timeout and missing executable (56.407333ms)
+✔ semantic splitting preserves abbreviations, inline math and comments (0.442583ms)
+✔ analysis requires complete model data and does not invent semantics (0.10675ms)
+✔ nested main file compiles with root-relative input (410.800375ms)
+✔ multi-file traversal inherits section context and rejects cycles (6.199667ms)
+✔ merged maps retain file locations and group common sections (0.205042ms)
+✔ annotation preserves compiled prose and paragraph boundaries (1621.724875ms)
+✔ Host routes report errors and fence conversation roots (17.234708ms)
+✔ review material expands only for bound sessions (3.4515ms)
+✔ public project responses keep semantic snapshots internal (2.864709ms)
+✔ multi-file analysis annotates source files and reuses all unchanged paragraphs (31.315291ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3247.511959
