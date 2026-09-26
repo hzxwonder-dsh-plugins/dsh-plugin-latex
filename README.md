@@ -6,6 +6,25 @@ DSH Desktop 的本地论文工作台：并排编辑 LaTeX 与预览 PDF，通过
 
 演示由实际 Desktop 操作截图组成，展示项目选择、编译预览、审阅、聊天和导图折叠。
 
+## 宿主支持
+
+本仓库维护 [DeepSeek 官方 Desktop](https://github.com/deepseek-ai/deepseek-harness) 的独立适配插件。
+[DSH Omni](https://github.com/hzxwonder/dsh-omni) 的集成版由其 `vendor/` 单独维护。维护目标为这两个桌面产品，Web 端不再作为维护目标。
+
+### 官方 Desktop 验收
+
+2026-09-26，macOS arm64，官方签名的 DeepSeek Harness **0.1.7-rc.2**，通过应用插件管理页安装公开版本 **0.1.14**：安装、启用、创建论文与编译 PDF 通过；点击行文导图后主区空白，整体验收未通过。
+
+官方有文档预览和通用 Agent，未提供等价的 Overleaf、编译、审阅和注释导图一体化论文工作台。
+
+[完整验收与官方功能对照](https://github.com/hzxwonder/dsh-omni/blob/main/docs/official-desktop-compatibility.md)。安装成功、组件运行与核心功能验收是不同阶段；兼容范围以实机报告为准。
+
+开发与发布顺序：DSH Omni 开发及实机验收 → 更新 Omni 仓库 → 官方 Desktop 适配及实机验收 → 发布本仓库。每次重新构建后重新实机验证。
+
+### 安装到官方 Desktop
+
+在官方应用中打开“插件 → 添加插件”，输入 `https://github.com/hzxwonder-dsh-plugins/dsh-plugin-latex`。安装器通过兼容性检查后再启用；按照上面的验收状态决定是否在日常配置使用。
+
 ## 使用
 
 1. 从左侧「工作流」下方的「论文工作台」进入，选择已有论文、新建论文，或打开本地项目目录。
@@ -21,7 +40,7 @@ DSH Desktop 的本地论文工作台：并排编辑 LaTeX 与预览 PDF，通过
 
 ## 安装
 
-推荐使用 [DSH Desktop Bundle](https://github.com/hzxwonder/dsh-desktop-bundle) 的固定版本组合。
+推荐使用 [DSH Omni](https://github.com/hzxwonder/dsh-omni) 的固定版本组合。
 
 独立开发安装：
 
