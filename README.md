@@ -1,5 +1,10 @@
 # DSH LaTeX Studio
 
+## Desktop 导航兼容性（2026-09-27）
+
+适配官方 DeepSeek Harness Desktop 0.1.7-rc.2 的 `sidebar.panellist`。论文工作台与其他全局面板共享导航按钮的行高、间距和选中状态；入口打开已通过实机验证。
+
+
 DSH Desktop 的本地论文工作台：并排编辑 LaTeX 与预览 PDF，通过原生 DeepSeek Harness 会话讨论论文、处理审阅和完善行文逻辑。
 
 ![论文工作台演示](assets/workbench-demo.gif)
